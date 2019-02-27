@@ -6,7 +6,16 @@
     <link rel="stylesheet" href="./photon/css/photon.min.css">
 
     <!-- Javascript -->
+    <script>if(typeof module === 'object') { window.module = module; module = undefined; }</script>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/socket.io.js"></script>
+
+    <script src="js/myScript.js"></script>
+
+    <script>if(window.module) { module = window.module; }</script>
   </head>
+
   <body>
     <div class="window">
       <header class="toolbar toolbar-header">
@@ -18,7 +27,13 @@
             <span>SideBar</span>
           </div>
           <div class="pane">
-            <span>MainPane</span>
+            <ul class="list-group" id="messages"> </ul>
+            <form id="messageForm">
+              <div class="form-group">
+                <input type="text" id="message" class="form-control" placeholder="Message">
+                <button type="submit" class="btn btn-form btn-default">Send</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

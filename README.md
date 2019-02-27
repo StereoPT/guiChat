@@ -1,19 +1,33 @@
 # guiChat
 
-![guiChat](https://raw.githubusercontent.com/StereoPT/guiChat/master/screens/guiChat_001.jpg)
+![guiChat](https://raw.githubusercontent.com/StereoPT/guiChat/master/screens/guiChat_002.jpg)
 
 
 ## ToDo List:
 
-- [ ] Add socket.io
+- [x] Add Photon
+- [x] Create Server
+- [x] Send Messages to Server
+- [x] Broadcast Messages
+- [ ] Broadcast Message when someone connects or disconnects
+- [ ] Change UI
+- [ ] Add Support for Nicknames
+- [ ] Don't send Message to the user who sent it
 
 
 ## Development Server
 
+### BackEnd Server
+
 First Run `npm install`
+Run with `nodemon server.js`
+
+
+### Electron Application
+
 Run with `npm start`
 
-Window should appear.
+A Window should appear.
 
 
 ## Meta
