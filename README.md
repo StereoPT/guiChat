@@ -5,7 +5,7 @@
 
 ## ToDo List:
 
-- [ ] Add New Controls
+- [ ] Add socket.io
 
 
 ## Development Server
