@@ -1,0 +1,22 @@
+{
+  "name": "guichat",
+  "version": "1.0.0",
+  "description": "Electron socket.io Chat Application",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StereoPT/guiChat.git"
+  },
+  "author": "StereoPT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StereoPT/guiChat/issues"
+  },
+  "homepage": "https://github.com/StereoPT/guiChat#readme",
+  "devDependencies": {
+    "electron": "^4.0.6"
+  }
+}
