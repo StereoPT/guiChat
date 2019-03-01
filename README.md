@@ -5,14 +5,14 @@
 
 ## ToDo List:
 
-- [x] Add Photon
-- [x] Create Server
-- [x] Send Messages to Server
 - [x] Broadcast Messages
-- [ ] Broadcast Message when someone connects or disconnects
-- [ ] Change UI
+- [x] Broadcast Message when someone connects or disconnects
+- [x] Change UI
 - [ ] Add Support for Nicknames
+  - [ ] Create Modal Window to Choose Nickname
 - [ ] Don't send Message to the user who sent it
+- [ ] Add "{user} is typing"
+- [ ] Show who is Online
 
 
 ## Development Server
