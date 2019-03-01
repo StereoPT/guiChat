@@ -1,6 +1,6 @@
 # guiChat
 
-![guiChat](https://raw.githubusercontent.com/StereoPT/guiChat/master/screens/guiChat_002.jpg)
+![guiChat](https://raw.githubusercontent.com/StereoPT/guiChat/master/screens/guiChat_003.jpg)
 
 
 ## ToDo List:
