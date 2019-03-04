@@ -1,3 +1,38 @@
-#message {
-  margin-top: 10px;
+nav {
+  height: 30px;
+  line-height: 30px;
+}
+
+nav .brand-logo {
+  font-size: 1.4rem;
+}
+
+.inbox {
+  margin-bottom: 0;
+  border: 1px solid #c4c4c4;
+  clear: both;
+  overflow: hidden;
+  height: 94vh;
+}
+
+.side-panel {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.main-panel {
+  height: 100%;
+  overflow-y: hidden;
+  padding: 0 !important;
+}
+
+#messageList {
+  height: 89%;
+  overflow-y: scroll;
+  margin-bottom: 0;
+  border: 0;
+}
+
+#messageForm .input-field {
+  margin: 0;
 }

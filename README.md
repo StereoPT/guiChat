@@ -1,13 +1,13 @@
 # guiChat
 
-![guiChat](https://raw.githubusercontent.com/StereoPT/guiChat/master/screens/guiChat_003.jpg)
+![guiChat](https://raw.githubusercontent.com/StereoPT/guiChat/master/screens/guiChat_004.jpg)
 
 
 ## ToDo List:
 
-- [x] Broadcast Messages
 - [x] Broadcast Message when someone connects or disconnects
 - [x] Change UI
+- [x] Change from Photon to Materialize
 - [ ] Add Support for Nicknames
   - [ ] Create Modal Window to Choose Nickname
 - [ ] Don't send Message to the user who sent it

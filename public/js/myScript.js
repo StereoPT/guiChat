@@ -22,12 +22,12 @@ $(function() {
   });
 
   function displayMessage(message) {
-    let messageForm = $(`<li class="list-group-item"><div class="media-body"><p>${message.text}</p></div></li>`);
+    let messageElement = $(`<li class="collection-item">${message.text}</li>`);
 
     if(message.event === 'connection' || message.event === 'disconnection') {
-      messageForm.css('background-color', '#c4c4c4');
+      messageElement.css('background-color', '#c4c4c4');
     }
 
-    messageList.append(messageForm);
+    messageList.append(messageElement);
   }
 });

@@ -3,42 +3,54 @@
   <head>
     <title>guiChat</title>
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="./photon/css/photon.min.css">
-    <link rel="stylesheet" href="css/myStyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/myStyle.css"/>
 
     <!-- Javascript -->
     <script>if(typeof module === 'object') { window.module = module; module = undefined; }</script>
 
     <script src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
     <script src="js/socket.io.js"></script>
 
     <script src="js/myScript.js"></script>
 
     <script>if(window.module) { module = window.module; }</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
   <body>
-    <div class="window">
-      <header class="toolbar toolbar-header">
-        <h1 class="title">guiChat</h1>
-      </header>
-      <div class="window-content">
-        <div class="pane-group">
-          <div class="pane pane-sm sidebar"> </div>
-          <div class="pane">
-            <ul class="list-group" id="messageList"> </ul>
-          </div>
-        </div>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">guiChat</a>
       </div>
-      <footer class="toolbar toolbar-footer">
-        <div class="toolbar-actions">
+    </nav>
+    <div id="app">
+      <div class="row inbox">
+        <div class="col s4 side-panel">
+          <ul class="collection">
+            <li class="collection-item avatar">
+              <i class="medium material-icons circle">account_box</i>
+              <span class="title">Username</span>
+            </li>
+            <li class="collection-item avatar">
+              <i class="medium material-icons circle">account_box</i>
+              <span class="title">Username</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col s8 main-panel">
+          <ul id="messageList" class="collection"></ul>
           <form id="messageForm">
-            <div class="form-group">
-              <input type="text" id="message" class="form-control" placeholder="Message">
+            <div class="input-field col s12">
+              <input placeholder="Message" id="message" type="text">
             </div>
           </form>
         </div>
-      </footer>
+      </div>
     </div>
   </body>
 </html>
