@@ -1,20 +1,26 @@
 $(function() {
+  var socket = io('http://localhost:2909');
+  
   var messageList = $('#messageList');
 
-  let usernameModal = M.Modal.getInstance($('#usernameModal').modal());
-  usernameModal.open();
+  let nicknameModal = M.Modal.getInstance($('#nicknameModal').modal());
+  nicknameModal.open();
 
-  var socket = io('http://localhost:2909');
   $('#messageForm').submit(function(e) {
     e.preventDefault();
-    socket.emit('message', $('#message').val());
+    let message = $('#message').val();
+
+    socket.emit('message', message);
+    displayMessage({ event: 'message', nickname: socket.nickname, text: message })
+
     $('#message').val('');
     return false;
   });
 
-  $('#chooseUsername').click(function() {
-    let selectedUsername = $('#username').val();
-    socket.emit('setUsername', selectedUsername);
+  $('#chooseNickname').click(function() {
+    let selectedNickname = $('#nickname').val();
+    socket.emit('setNickname', selectedNickname);
+    socket.nickname = selectedNickname;
   });
 
   socket.on('message', function(message) {
@@ -30,9 +36,10 @@ $(function() {
   });
 
   function displayMessage(message) {
-    let messageElement = $(`<li class="collection-item">${message.username}: ${message.text}</li>`);
+    let messageElement = $(`<li class="collection-item">${message.nickname}: ${message.text}</li>`);;
 
     if(message.event === 'connection' || message.event === 'disconnection') {
+      messageElement = $(`<li class="collection-item">${message.text}</li>`);
       messageElement.css('background-color', '#c4c4c4');
     }
 

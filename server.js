@@ -8,11 +8,11 @@ io.on('connection', function(socket) {
   broadcastConnection(socket);
 
   socket.on('message', function(message) {
-    io.emit('message', { event: 'message', username: socket.username, text: message });
+    socket.broadcast.emit('message', { event: 'message', nickname: socket.nickname, text: message });
   });
 
-  socket.on('setUsername', function(username) {
-    socket.username = username;
+  socket.on('setNickname', function(nickname) {
+    socket.nickname = nickname;
   });
 
   socket.on('disconnect', function() {
@@ -31,7 +31,7 @@ function broadcastDisconnection(socket) {
 };
 
 app.get('/', function(req, res) {
-  res.send('<h1>Hello World</h1>');
+  res.send('<h1>guiChat</h1>');
 });
 
 http.listen(2909, function() {
