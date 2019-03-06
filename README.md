@@ -8,8 +8,8 @@
 - [x] Broadcast Message when someone connects or disconnects
 - [x] Change UI
 - [x] Change from Photon to Materialize
-- [ ] Add Support for Nicknames
-  - [ ] Create Modal Window to Choose Nickname
+- [x] Add Support for Nicknames
+  - [x] Create Modal Window to Choose Nickname
 - [ ] Don't send Message to the user who sent it
 - [ ] Add "{user} is typing"
 - [ ] Show who is Online

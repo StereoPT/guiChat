@@ -8,7 +8,11 @@ io.on('connection', function(socket) {
   broadcastConnection(socket);
 
   socket.on('message', function(message) {
-    io.emit('message', { event: 'message', text: message });
+    io.emit('message', { event: 'message', username: socket.username, text: message });
+  });
+
+  socket.on('setUsername', function(username) {
+    socket.username = username;
   });
 
   socket.on('disconnect', function() {
