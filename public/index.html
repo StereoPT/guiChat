@@ -31,19 +31,11 @@
     <div id="app">
       <div class="row inbox">
         <div class="col s4 side-panel">
-          <ul class="collection">
-            <li class="collection-item avatar">
-              <i class="medium material-icons circle">account_box</i>
-              <span class="title">Username</span>
-            </li>
-            <li class="collection-item avatar">
-              <i class="medium material-icons circle">account_box</i>
-              <span class="title">Username</span>
-            </li>
-          </ul>
+          <ul id="onlineUsers" class="collection"></ul>
         </div>
         <div class="col s8 main-panel">
           <ul id="messageList" class="collection"></ul>
+          <div id="usersTyping"></div>
           <form id="messageForm">
             <div class="input-field col s12">
               <input placeholder="Message" id="message" type="text">

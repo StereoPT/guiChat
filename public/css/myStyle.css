@@ -27,7 +27,7 @@ nav .brand-logo {
 }
 
 #messageList {
-  height: 89%;
+  height: 85%;
   overflow-y: scroll;
   margin-bottom: 0;
   border: 0;
@@ -35,4 +35,10 @@ nav .brand-logo {
 
 #messageForm .input-field {
   margin: 0;
+}
+
+#usersTyping {
+  min-height: 20px;
+  margin-left: 10px;
+  overflow-x: hidden;
 }

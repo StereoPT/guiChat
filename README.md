@@ -9,8 +9,8 @@
 - [x] Add Support for Nicknames
   - [x] Create Modal Window to Choose Nickname
 - [x] Don't send Message to the user who sent it
-- [ ] Add "{user} is typing"
 - [ ] Show who is Online
+- [x] Add "{user} is typing"
 - [ ] UI Changes
 
 
