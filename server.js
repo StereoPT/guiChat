@@ -15,7 +15,7 @@ io.on('connection', function(socket) {
   });
 
   socket.on('typing', function(data) {
-    socket.broadcast.emit('typing', { nickname: socket.nickname });
+    socket.broadcast.emit('typing', { isTyping: data, nickname: socket.nickname });
   });
 
   socket.on('disconnect', function() {

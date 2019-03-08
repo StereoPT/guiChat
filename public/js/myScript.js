@@ -1,6 +1,9 @@
 $(function() {
   var socket = io('http://localhost:2909');
 
+  var typing = false;
+  var timeout = undefined;
+
   var messageList = $('#messageList');
 
   let nicknameModal = M.Modal.getInstance($('#nicknameModal').modal());
@@ -20,8 +23,16 @@ $(function() {
     return false;
   });
 
-  $('#message').bind('keypress', function(e) {
-    socket.emit('typing');
+  $('#message').keypress(function(e) {
+    if(e.which != 13) {
+      if(typing == false) {
+        typing = true;
+        socket.emit('typing', true);
+      } else {
+        clearTimeout(timeout);
+        timeout = setTimeout(typingTimeout, 5000);
+      }
+    }
   });
 
   $('#chooseNickname').click(function() {
@@ -36,8 +47,15 @@ $(function() {
     $('#usersTyping').html('');
   });
 
-  socket.on('typing', function(user) {
-    $('#usersTyping').html(`<i>${user.nickname} is typing...</i>`);
+  socket.on('typing', function(data) {
+    if(data.isTyping) {
+      if($(`#${data.nickname}`).length == 0) {
+        $('#usersTyping').append(`<i id="${data.nickname}">${data.nickname} is typing...</i>`);
+        timeout = setTimeout(typingTimeout, 5000);
+      }
+    } else {
+      $(`#${data.nickname}`).remove();
+    }
   });
 
   socket.on('userConnected', function(message) {
@@ -56,5 +74,10 @@ $(function() {
     }
 
     messageList.append(messageElement);
+  }
+
+  function typingTimeout() {
+    typing = false;
+    socket.emit('typing', false);
   }
 });
