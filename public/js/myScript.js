@@ -2,7 +2,7 @@ $(function() {
   var socket = io('http://localhost:2909');
 
   var typing = false;
-  var timeout = undefined;
+  var typingTimeout = undefined;
 
   var messageList = $('#messageList');
 
@@ -29,8 +29,8 @@ $(function() {
         typing = true;
         socket.emit('typing', true);
       } else {
-        clearTimeout(timeout);
-        timeout = setTimeout(typingTimeout, 5000);
+        clearTimeout(typingTimeout);
+        typingTimeout = setTimeout(typingTimeoutFunction, 5000);
       }
     }
   });
@@ -44,14 +44,14 @@ $(function() {
 
   socket.on('message', function(message) {
     displayMessage(message);
-    $('#usersTyping').html('');
+    $(`#${message.nickname}`).remove();
   });
 
   socket.on('typing', function(data) {
     if(data.isTyping) {
       if($(`#${data.nickname}`).length == 0) {
-        $('#usersTyping').append(`<i id="${data.nickname}">${data.nickname} is typing...</i>`);
-        timeout = setTimeout(typingTimeout, 5000);
+        $('#usersTyping').append(`<span id="${data.nickname}" class="new badge left">${data.nickname} is typing...</soan>`);
+        typingTimeout = setTimeout(typingTimeoutFunction, 5000);
       }
     } else {
       $(`#${data.nickname}`).remove();
@@ -76,7 +76,14 @@ $(function() {
     messageList.append(messageElement);
   }
 
-  function typingTimeout() {
+  function clearUserTyping(user) {
+    if($(`#${user}`).length == 0) {
+      $('#usersTyping').append(`<i id="${user}">${user} is typing...</i>`);
+      typingTimeout = setTimeout(typingTimeoutFunction, 5000);
+    }
+  }
+
+  function typingTimeoutFunction() {
     typing = false;
     socket.emit('typing', false);
   }
