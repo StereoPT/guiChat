@@ -50,7 +50,7 @@ $(function() {
   socket.on('typing', function(data) {
     if(data.isTyping) {
       if($(`#${data.nickname}`).length == 0) {
-        $('#usersTyping').append(`<span id="${data.nickname}" class="new badge left">${data.nickname} is typing...</soan>`);
+        $('#usersTyping').append(`<span id="${data.nickname}" class="left new badge"data-badge-caption="">${data.nickname} is typing...</span>`);
         typingTimeout = setTimeout(typingTimeoutFunction, 5000);
       }
     } else {
@@ -74,13 +74,6 @@ $(function() {
     }
 
     messageList.append(messageElement);
-  }
-
-  function clearUserTyping(user) {
-    if($(`#${user}`).length == 0) {
-      $('#usersTyping').append(`<i id="${user}">${user} is typing...</i>`);
-      typingTimeout = setTimeout(typingTimeoutFunction, 5000);
-    }
   }
 
   function typingTimeoutFunction() {

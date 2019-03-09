@@ -24,6 +24,7 @@
     "materialize-css": "^1.0.0",
     "nodemon": "^1.18.10",
     "socket.io": "^2.2.0",
+    "underscore": "^1.9.1",
     "xel": "0.0.198"
   }
 }
