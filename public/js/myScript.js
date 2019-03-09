@@ -58,6 +58,10 @@ $(function() {
     }
   });
 
+  socket.on('onlineUsers', function(users) {
+    displayOnlineUsers(users);
+  });
+
   socket.on('userConnected', function(message) {
     displayMessage(message);
   });
@@ -74,6 +78,15 @@ $(function() {
     }
 
     messageList.append(messageElement);
+  }
+
+  function displayOnlineUsers(users) {
+    let usersList = $('#onlineUsers');
+    usersList.empty();
+    usersList.append(`<li class="collection-item"><b>Users Online:</b> <span class="badge">${users.count}</span></li>`);
+    $.each(users.users, function(i, user) {
+      usersList.append(`<li class="collection-item">${user.nickname}</li>`)
+    });
   }
 
   function typingTimeoutFunction() {

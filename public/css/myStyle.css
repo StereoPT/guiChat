@@ -9,7 +9,6 @@ nav .brand-logo {
 
 .inbox {
   margin-bottom: 0;
-  border: 1px solid #c4c4c4;
   clear: both;
   overflow: hidden;
   height: 94vh;
@@ -40,4 +39,8 @@ nav .brand-logo {
 #usersTyping {
   min-height: 20px;
   overflow-x: hidden;
+}
+
+#onlineUsers {
+  border: 0;
 }

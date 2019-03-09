@@ -1,6 +1,6 @@
 # guiChat
 
-![guiChat](https://raw.githubusercontent.com/StereoPT/guiChat/master/screens/guiChat_005.jpg)
+![guiChat](https://raw.githubusercontent.com/StereoPT/guiChat/master/screens/guiChat_006.jpg)
 
 
 ## ToDo List:
@@ -9,9 +9,8 @@
 - [x] Add Support for Nicknames
   - [x] Create Modal Window to Choose Nickname
 - [x] Don't send Message to the user who sent it
-- [ ] Show who is Online
+- [x] Show who is Online
 - [x] Add "{user} is typing"
-- [ ] UI Changes
 
 
 ## Development Server

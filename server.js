@@ -21,12 +21,14 @@ io.on('connection', function(socket) {
         return exists = true;
       }
     });
+
     if(exists) {
       console.log("That Nickname already Exists!");
     } else {
       users[socket.id] = { 'nickname': nickname };
       sockets.push(socket);
       broadcastConnection(socket, users[socket.id].nickname);
+      broadcastOnlineUsers();
     }
   });
 
@@ -39,19 +41,24 @@ io.on('connection', function(socket) {
   socket.on('disconnect', function() {
     if(typeof users[socket.id] !== 'undefined') {
       broadcastDisconnection(socket, users[socket.id].nickname);
+      delete users[socket.id];
+      broadcastOnlineUsers();
     }
   });
 });
 
 function broadcastConnection(socket, user) {
-  console.log("A User Connected!");
   socket.broadcast.emit('userConnected', { event: 'connection', nickname: user, text: 'Connected!' });
 }
 
 function broadcastDisconnection(socket, user) {
-  console.log("A User Disconnected.");
   socket.broadcast.emit('userDisconnected', { event: 'disconnection', nickname: user, text: 'Disconnected!' });
 };
+
+function broadcastOnlineUsers() {
+  userCount = _.size(users);
+  io.emit('onlineUsers', { users: users, count: userCount });
+}
 
 app.get('/', function(req, res) {
   res.send('<h1>guiChat</h1>');

@@ -1,14 +1,14 @@
 const { app, BrowserWindow } = require('electron');
 
-const mainWindow = null;
+var mainWindow = null;
 
 function createWindow() {
-  mainWindw = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 800, height: 600,
     minWidth: 500, minHeight: 200
   });
 
-  mainWindw.loadFile('./public/index.html');
+  mainWindow.loadFile('./public/index.html');
 }
 
 console.log("[guiChat]");
