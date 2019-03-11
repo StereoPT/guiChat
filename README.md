@@ -1,16 +1,24 @@
 # guiChat
 
-![guiChat](https://raw.githubusercontent.com/StereoPT/guiChat/master/screens/guiChat_006.jpg)
+![guiChat](https://raw.githubusercontent.com/StereoPT/guiChat/master/screens/guiChat.gif)
+
+## Features
+
+ - Localhost Chat
+ - Can be used for same Network Chat
+ - Supports Nicknames
+ - Display Online Users
+ - Server and Electron Application
 
 
-## ToDo List:
+## ToDo:
 
-- [x] Change from Photon to Materialize
-- [x] Add Support for Nicknames
-  - [x] Create Modal Window to Choose Nickname
-- [x] Don't send Message to the user who sent it
-- [x] Show who is Online
-- [x] Add "{user} is typing"
+- [ ] Add Rooms
+- [ ] Better Message Information
+- [ ] Private Messages
+- [ ] Better UI
+- [ ] Server Choose || Find
+- [ ] Better Electron Window
 
 
 ## Development Server
@@ -26,6 +34,12 @@ Run with `nodemon server.js`
 Run with `npm start`
 
 A Window should appear.
+
+
+## Release History
+
+ - 1.0
+	 - First Release | Simple functionalities Implemented.
 
 
 ## Meta
