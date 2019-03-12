@@ -1,5 +1,7 @@
 # guiChat
 
+![version](https://img.shields.io/badge/version-1.0-blue.svg) ![passing_build](https://img.shields.io/badge/build-passing-brightgreen.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg)
+
 ![guiChat](https://raw.githubusercontent.com/StereoPT/guiChat/master/screens/guiChat.gif)
 
 ## Features
